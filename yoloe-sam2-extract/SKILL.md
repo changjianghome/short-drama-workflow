@@ -1,6 +1,13 @@
-# Skill: yoloe-sam2-extract
+---
+name: yoloe-sam2-extract
+description: 基于 YOLOE + SAM2.1 的卡通角色提取工具。当用户说"提取卡通人物"、"抠出所有角色"、"从教材/绘本提取人物"时触发。文字提示自动识别所有卡通角色（无需手动打点/打框），SAM2.1 逐个精确分割，输出透明背景 PNG。YOLOE + SAM2.1 character extraction — auto-detect all cartoon characters via text prompt, segment each with SAM2.1, output transparent PNGs.
+compatibility: opencode
+metadata:
+  audience: 视频制作者、教材处理
+  workflow: 素材提取
+---
 
-# YOLOE + SAM2.1 卡通角色提取 Skill
+# 卡通角色提取 Skill (YOLOE + SAM2.1)
 
 ## 概览
 
@@ -49,6 +56,7 @@ ln -sf code/sam2_code/sam2/configs configs                             # SAM2 hy
 yoloe-sam2-extract/
 ├── SKILL.md                    # 本文档
 ├── extract_characters.py       # 主脚本（唯一入口）
+├── download_models.sh          # 一键下载模型 + 建软链
 ├── model/                      # 模型权重（git 忽略，不入库）
 │   ├── yoloe/yoloe-11s-seg.pt      # YOLOE 检测+分割（27MB）
 │   ├── sam2/sam2.1_hiera_tiny.pt   # SAM2.1 分割（149MB）
@@ -107,6 +115,7 @@ pip install torch torchvision pillow numpy hydra-core omegaconf iopath ftfy rege
 | `--expand` | 0.0 | 检测框扩大比例，0=原始框 |
 | `--names` | `cartoon character, cartoon animal` | 识别类别，逗号分隔 |
 | `--iou` | 0.3 | 去重 IoU 阈值，>0.3 视为同一角色 |
+| `--text-model` | `blt` | MobileCLIP 文本编码器变体（仅 blt 可识别卡通） |
 
 ## 输出
 
