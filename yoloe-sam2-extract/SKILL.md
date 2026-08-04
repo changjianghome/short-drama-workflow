@@ -70,11 +70,16 @@ yoloe-sam2-extract/
 
 - Python 3.10+（推荐 3.12）
 - **必须用系统 Python**（`/usr/bin/python3`），需 torch ≥2.5.1（P100/P102 等老 GPU 用 cu121 版）
-- 依赖：`torch torchvision pillow numpy hydra-core omegaconf iopath ftfy regex timm open_clip_torch`
+- 依赖：`torch torchvision pillow numpy hydra-core omegaconf iopath ftfy regex timm open_clip_torch clip`
 
 ```bash
-pip install torch torchvision pillow numpy hydra-core omegaconf iopath ftfy regex timm open_clip_torch
+pip install torch torchvision pillow numpy hydra-core omegaconf iopath ftfy regex timm open_clip_torch clip
 ```
+
+**说明**：
+- `clip` 是 Ultralytics 的 CLIP（`git+https://github.com/ultralytics/CLIP.git`），YOLOE 文本编码必需；本 skill 的 `code/CLIP/` 已含其源码，`sys.path` 已指向它，多数情况下无需单独安装
+- 若运行报 `No module named 'clip'`，将 `code/CLIP` 加入 `PYTHONPATH` 或 `pip install git+https://github.com/ultralytics/CLIP.git`
+- venv/conda 的 torch 2.13+ 在 P102（算力 6.1）等老 GPU 上会报 CUDA kernel 错误，**务必用 `/usr/bin/python3`（torch 2.5.1+cu121）**
 
 ## 用法
 
