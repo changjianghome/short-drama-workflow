@@ -25,7 +25,7 @@ description: 让本地 Mac 语音朗读文本内容。当 Agent 任务结束、�
 
 - **基础 URL**：这两个地址通常只有一个在线。为保证触达，请优先调用本机地址，并在失败时自动降级（Fallback）调用备用地址：
   - 本机优先：`http://<MAC_SAY_PRIMARY_IP>:12345/say`
-  - 备用地址：`http://<MAC_SAY_BACKUP_IP>:12345/say_server`
+  - 备用地址：`http://<MAC_SAY_BACKUP_IP>:12345/say`
   - ⚠️ **分享注意**：`<MAC_SAY_PRIMARY_IP>` / `<MAC_SAY_BACKUP_IP>` 为占位符，请替换为你本机 Mac 语音服务的内网 IP；也可用环境变量 `MAC_SAY_URL` 直接指定完整地址覆盖。
 - **请求方法**：`GET`
 - **参数说明**：
@@ -41,7 +41,7 @@ description: 让本地 Mac 语音朗读文本内容。当 Agent 任务结束、�
 由于两个地址只有一个在线，调用时请使用带有超时和 `||`（或）逻辑的复合命令。这样 Agent 只需要执行这一行命令，如果第一个地址请求失败（如不在线），会自动尝试第二个地址：
 
 ```bash
-curl --max-time 3 -G -s --data-urlencode "text=测试新版更加自然的中文声音" "http://<MAC_SAY_PRIMARY_IP>:12345/say" || curl --max-time 3 -G -s --data-urlencode "text=测试新版更加自然的中文声音" "http://<MAC_SAY_BACKUP_IP>:12345/say_server"
+curl --max-time 3 -G -s --data-urlencode "text=测试新版更加自然的中文声音" "http://<MAC_SAY_PRIMARY_IP>:12345/say" || curl --max-time 3 -G -s --data-urlencode "text=测试新版更加自然的中文声音" "http://<MAC_SAY_BACKUP_IP>:12345/say"
 ```
 
 ---
