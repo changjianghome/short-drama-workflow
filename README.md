@@ -14,6 +14,7 @@ AI short-drama production workflow for English teaching content (textbook dialog
 | `runninghub-api` | RunningHub 余额查询 + LTX 2.3 图生视频 + JSON 生成规则 |
 | `grs-image-api` | GRS 四宫格分镜生成 + 四宫格切分 |
 | `image-person-extraction` | SAM3 从教材插图中抠取人物 |
+| `yoloe-sam2-extract` | **YOLOE + SAM2.1 自动识别并抠取卡通角色**（文字提示，无需打点） |
 | `mac-say` | 本机 Mac 语音播报通知（≤30字） |
 | `feishu-bot` | 成品发送到飞书（可选） |
 
