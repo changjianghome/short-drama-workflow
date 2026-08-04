@@ -1,0 +1,57 @@
+# LTX 2.3 项目配置示例（每个项目新建一份，复制本文件改名即可）
+# 用法: python3 gen_ltx_json.py --config project.yaml --outdir 提示词/
+# ⚠️ 制作前必须逐格核对四宫格图片，将每个 clip 的 present_chars 填为该画面实际出现的角色
+
+project: "Unit1_Cartoon_Story"           # 项目名
+style_base: |                             # 风格基底（所有 clip 共享）
+  Cute 3D animation style, children's English textbook cartoon.
+  Mouse characters with big expressive eyes and soft fur.
+  Bright cheerful colors, warm soft lighting, clean composition.
+
+characters:                               # 角色清单（本项目全部角色）
+  - name: "Aunt_Alice(女)"
+    desc: "adult female mouse, round pink ears, round glasses, pink top, purple skirt"
+  - name: "Tina(女)"
+    desc: "young girl mouse, pink flower dress"
+  - name: "Bobby(男)"
+    desc: "boy mouse, green striped shirt"
+
+# ⚠️ 多角色画面防混淆（重要）
+# 同一画面 ≥2 个角色时，必须为每个角色填写 positions（画面中的位置关系）：
+#   - 位置描述用相对关系：standing on the left / on the right / beside / facing / behind / in front of / next to
+#   - 脚本会自动把"角色名(女/男) + 位置"写进 global_prompt 和 local_prompts
+#   - 说话人(speaker)会自动带完整外貌+位置描述，让模型知道哪个角色在说话
+# 示例：
+#   positions:
+#     "Aunt_Alice(女)": "standing on the left"
+#     "Tina(女)": "standing on the right at the door"
+
+clips:                                    # 每个画面一个 clip
+  - id: "片01_Alice来访"
+    image: "07_分镜图片/jpg/片01_Alice来访.jpg"     # 输入图（切分后单图的 JPG）
+    scene: "front of the cute red-roof house, warm afternoon, green lawn"   # 场景/环境描述
+    present_chars: ["Aunt_Alice(女)", "Tina(女)"]   # ← 该画面实际角色（逐格核对！）
+    positions:                                      # ← 每个角色在画面中的位置关系（关键！多角色必须填）
+      "Aunt_Alice(女)": "standing on the left, walking toward the door"
+      "Tina(女)": "standing at the door on the right, waving"
+    camera: "medium shot, static frame with subtle handheld breathing"
+    action: "Aunt_Alice the adult mouse with round glasses in pink top and purple skirt walks toward the house carrying a bag, Tina the girl mouse in pink flower dress waves at the door"
+    line: "Hello, Tina!"                            # 台词原文（英文课本用英文，中文剧本用中文）
+    speaker: "Aunt_Alice(女)"                       # 说话人（用 characters 中的标准名）
+    speaker_verb: "says"
+    audio: "cheerful birdsong, soft footsteps on grass, warm gentle piano"
+    action_nodes: 1                                 # 动作/反应节点数（用于算时长）
+
+  - id: "片02_Tina展示房间"
+    image: "07_分镜图片/jpg/片02_Tina展示房间.jpg"
+    scene: "Tina's tidy bedroom with blue desk, pink bed and yellow pillow"
+    present_chars: ["Tina(女)"]                     # 只有 Tina 一人（单角色无需 positions）
+    camera: "medium shot, slow push-in"
+    action: "Tina the girl mouse in pink flower dress stands proudly, gesturing toward the neat room"
+    line: "This is my room."
+    speaker: "Tina(女)"
+    speaker_verb: "says"
+    audio: "soft footsteps on wooden floor, gentle breeze, light playful piano"
+    action_nodes: 1
+
+  # ... 其他 clip 依此类推

@@ -1,0 +1,9 @@
+# 分享前请勿提交以下文件（含密钥/隐私/大模型）
+.env
+.accounts.json
+**/.accounts.json
+model/
+**/model/
+__pycache__/
+*.pyc
+.DS_Store
