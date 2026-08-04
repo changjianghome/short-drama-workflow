@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """RunningHub 批量文生图：提交 → 轮询(最长30min) → 下载。
-超时不丢结果（内置脚本 卡通儿童教材插画.py 的轮询 600s 写死，批量任务会超时丢失）。
+超时不丢结果（内置脚本 zimage-批量出图.py 的轮询 600s 写死，批量任务会超时丢失）。
 
 用法:
     python3 rh_batch_image.py \
@@ -12,11 +12,11 @@
 
 依赖:
     - 同目录 query_account_api.py (账号表)
-    - 节点结构需匹配 WebApp: 提示词node26 / 宽node6 / 高node7 (卡通儿童教材插画应用)
+    - 节点结构需匹配 WebApp: 提示词node26 / 宽node6 / 高node7 (zimage-批量出图应用)
 """
 import json, os, sys, time, argparse, urllib.request, urllib.error, urllib.parse
 
-DEFAULT_WEBAPP = "2083566214957322242"  # 卡通儿童教材插画
+DEFAULT_WEBAPP = "2083566214957322242"  # zimage-批量出图
 
 
 def get_key(name_or_key):

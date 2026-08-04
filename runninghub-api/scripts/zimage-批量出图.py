@@ -69,7 +69,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     default_outdir = os.path.join(script_dir, "outputs")
 
-    parser = argparse.ArgumentParser(description="RunningHub 卡通儿童教材插画 专属调用脚本")
+    parser = argparse.ArgumentParser(description="RunningHub zimage-批量出图 专属调用脚本")
     parser.add_argument("--apikey", help="RunningHub API Key (默认从环境变量 RUNNINGHUB_API_KEY 读取)")
     parser.add_argument("--prompt", "-p", required=True, help="提示词。支持多行，每行一个场景/一张图 (用换行分隔多个提示词)")
     parser.add_argument("--width", "-W", type=int, default=512, help="图片宽度 (默认: 512)")

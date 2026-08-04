@@ -32,7 +32,7 @@ description: Trigger this skill when calling ComfyUI workflows and AI WebApps ho
 |:---|:---|:---|
 | **LTX 2.3 图生视频** | **~5 RH/秒** | 基于 2026-07-19 实测数据（866 RH / ~260s 成功视频） |
 | **图片生成** (Z_image/单图编辑等) | **~7 RH/张** | 基于实测估算 |
-| **卡通儿童教材插画批量出图** | **~0.3 RH/张** | 2026-08-02 实测：256 尺寸 42 张耗 13 RH、50 张耗 12 RH。批量预算按 0.3 RH/张 估算 |
+| **zimage-批量出图** | **~0.3 RH/张** | 2026-08-02 实测：256 尺寸 42 张耗 13 RH、50 张耗 12 RH。批量预算按 0.3 RH/张 估算 |
 
 > [!IMPORTANT]
 > 加 `--project-dir` 后，脚本在**任务提交前**先检查余额：
@@ -48,10 +48,10 @@ description: Trigger this skill when calling ComfyUI workflows and AI WebApps ho
 | :--- | :--- | :--- | :--- |
 | **Z_image-快速版本-基础工作流** | `2076895906833715201` | [Z_image_快速版本_基础工作流.py](file:///Users/wuwu/Documents/project_backup/wk/runninghub-api/scripts/Z_image_%E5%BF%AB%E9%80%9F%E7%89%88%E6%9C%AC_%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81.py) | [Z_image_快速版本_基础工作流_说明.md](file:///Users/wuwu/Documents/project_backup/wk/runninghub-api/scripts/Z_image_%E5%BF%AB%E9%80%9F%E7%89%88%E6%9C%AC_%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81_%E8%AF%B4%E6%98%8E.md) |
 | **2511单图参考编辑_bf16-基础工作流** | `2076911428203798530` | [单图参考编辑_bf16_基础工作流.py](file:///Users/wuwu/Documents/project_backup/wk/runninghub-api/scripts/%E5%8D%95%E5%9B%BE%E5%8F%82%E8%80%83%E7%BC%96%E8%BE%91_bf16_%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81.py) | [单图参考编辑_bf16_基础工作流_说明.md](file:///Users/wuwu/Documents/project_backup/wk/runninghub-api/scripts/%E5%8D%95%E5%9B%BE%E5%8F%82%E8%80%83%E7%BC%96%E8%BE%91_bf16_%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81_%E8%AF%B4%E6%98%8E.md) |
-| **卡通儿童教材插画** | `2083566214957322242` | [卡通儿童教材插画.py](scripts/卡通儿童教材插画.py) | [卡通儿童教材插画_说明.md](scripts/卡通儿童教材插画_说明.md) |
+| **zimage-批量出图** | `2083566214957322242` | [zimage-批量出图.py](scripts/zimage-批量出图.py) | [zimage-批量出图_说明.md](scripts/zimage-批量出图_说明.md) |
 | **RH 批量文生图**（通用） | 任意 | [rh_batch_image.py](scripts/rh_batch_image.py) | 30min 超时 + 断点下载；大批量(>40张)优先用此脚本，勿用内置 600s 超时脚本 |
 | **ltx2.3_无导演台_纯参数** | `2077031364116959233` | [ltx2.3_无导演台_纯参数.py](file:///Users/wuwu/Downloads/wk/runninghub-api/scripts/ltx2.3_%E6%97%A0%E5%AF%BC%E6%BC%94%E5%8F%B0_%E7%BA%AF%E5%8F%82%E6%95%B0.py) | [ltx2.3_无导演台_纯参数_说明.md](file:///Users/wuwu/Downloads/wk/runninghub-api/scripts/ltx2.3_%E6%97%A0%E5%AF%BC%E6%BC%94%E5%8F%B0_%E7%BA%AF%E5%8F%82%E6%95%B0_%E8%AF%B4%E6%98%8E.md) |
-| **卡通儿童教材插画** | `2083566214957322242` | [卡通儿童教材插画.py](scripts/卡通儿童教材插画.py) | [卡通儿童教材插画_说明.md](scripts/卡通儿童教材插画_说明.md) |
+| **zimage-批量出图** | `2083566214957322242` | [zimage-批量出图.py](scripts/zimage-批量出图.py) | [zimage-批量出图_说明.md](scripts/zimage-批量出图_说明.md) |
 
 ---
 

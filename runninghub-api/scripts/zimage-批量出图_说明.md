@@ -1,12 +1,12 @@
-# 卡通儿童教材插画 AI 应用 API 调用说明文档
+# zimage-批量出图 AI 应用 API 调用说明文档
 
-本文档用于指导开发者如何通过 API 调用在 RunningHub 平台托管的 **`卡通儿童教材插画`** AI 应用，用于批量生成卡通儿童教材风格的插画图片。
+本文档用于指导开发者如何通过 API 调用在 RunningHub 平台托管的 **`zimage-批量出图`** AI 应用，用于批量生成卡通儿童教材风格的插画图片。
 
 ---
 
 ## 1. 基础信息
 
-*   **应用名称**：卡通儿童教材插画
+*   **应用名称**：zimage-批量出图
 *   **WebApp ID**：`2083566214957322242`
 *   **API 域名**：`https://www.runninghub.cn`
 *   **出图方式**：文生图（支持多行提示词批量出图）
@@ -81,21 +81,21 @@
 
 ## 4. 专属脚本调用方式
 
-脚本位于 `scripts/卡通儿童教材插画.py`，已内置 WebApp ID 并封装 RH 追踪，无需传复杂 JSON。
+脚本位于 `scripts/zimage-批量出图.py`，已内置 WebApp ID 并封装 RH 追踪，无需传复杂 JSON。
 
 ```bash
 # 1. 导出 API Key 环境变量
 export RUNNINGHUB_API_KEY="您的_32位_API_KEY"
 
 # 2. 带 RH 追踪的完整调用（推荐）
-python3 scripts/卡通儿童教材插画.py \
+python3 scripts/zimage-批量出图.py \
   --prompt "卡通儿童教材插画，一个笑眯眯的小学生睡前把课本和文具整齐收进书包，墙上有贴满星星的习惯打卡表，柔和的卧室背景，明亮糖果色，扁平插画风，主体居中，无文字
 卡通儿童教材插画，小朋友侧耳认真听讲，眼睛发亮，老师在讲台指着黑板，明亮教室背景，圆润可爱画风，暖色调，主体居中，无文字" \
   --width 512 --height 512 \
   --project-dir "wk/项目名"
 
 # 3. 不想自动扣减 RH 时加 --no-track-rh
-python3 scripts/卡通儿童教材插画.py --prompt "test" --no-track-rh
+python3 scripts/zimage-批量出图.py --prompt "test" --no-track-rh
 ```
 
 ### 参数说明
