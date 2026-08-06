@@ -4,6 +4,18 @@
 
 AI short-drama production workflow for English teaching content (textbook dialogues → finished video), split into **6 decoupled stages** with phase-gate control.
 
+## 📺 视频教程与示例（B站）
+
+| 视频 | 链接 | 说明 |
+|------|------|------|
+| AI教材短剧制作全流程（6步） | https://www.bilibili.com/video/BV1F1uH6sEeX | ai-film-6-stage skill 完整流程教学 |
+| 飞书机器人一键发消息 | https://www.bilibili.com/video/BV1BSuH6DEu9 | feishu-bot skill 介绍 |
+| Mac语音播报 | https://www.bilibili.com/video/BV1BSuH6DEig | mac-say skill 介绍 |
+| 【示例】五年级英语 Unit4 Cartoon Time | https://www.bilibili.com/video/BV1A6uH6ZEGr | 教材短剧成品示例 |
+
+- 完整合集（短剧流程化）：https://space.bilibili.com/3690989141100888/channel/seriesdetail?sid=8755795
+- 📦 夸克网盘（素材/源码）：https://pan.quark.cn/s/28e7e2871031 提取码：Gxe5
+
 ## 包含的 Skill（平级并列，互不包含）
 
 本仓库是**平级 skill 集合**，`ai-film-6-stage` 只是通过相对路径（`../<skill名>/...`）**依赖**其他 skill，不包含它们。
